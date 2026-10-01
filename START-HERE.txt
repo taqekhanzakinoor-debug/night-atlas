@@ -1,0 +1,59 @@
+NIGHT ATLAS - RUN ON YOUR PC
+==========================
+
+WINDOWS - FIRST TIME
+1. Install Node.js LTS from https://nodejs.org/ (version 22 or newer).
+   If Node.js 22+ is already installed, skip this step.
+2. Right-click Night-Atlas-PC.zip and choose Extract All.
+3. Open the extracted Night-Atlas-PC folder.
+4. Double-click Start-Night-Atlas.bat.
+5. Night Atlas opens in your browser. Keep the launcher window open.
+   If the browser does not open, use the local address shown in that window.
+
+You do not need npm install or an internet connection to run the included
+prebuilt sky planner. Node.js must be installed first.
+
+CONNECT GEMMA - BACKEND CONFIGURATION
+1. Create a Google AI Studio API key at https://aistudio.google.com/apikey
+2. Double-click Setup-Gemma.bat in this folder.
+3. Notepad opens a file named .env. Replace YOUR_GEMMA_API_KEY_HERE:
+   GEMMA_API_KEY=your_actual_key_here
+4. Save the file and close Notepad.
+5. Close any running Night Atlas launcher and run Start-Night-Atlas.bat again.
+6. Ask Gemma a question. Visitors do not enter or see the API key.
+
+Your key is read by the local backend. It is not in the browser's JavaScript,
+HTML, browser storage, or chat requests. The backend sends it directly to
+Google over HTTPS. The .env file is excluded from Git and is not served by
+the app. Keep your actual .env private when sharing project files.
+Gemma still needs internet, model access and quota on your Google account.
+This package does not run Gemma model weights locally.
+
+TO STOP
+Close the launcher window, or press Ctrl+C inside it.
+
+TO OPEN AGAIN
+Double-click Start-Night-Atlas.bat.
+
+EDIT THE PROJECT
+The editable application code is in src/. Use VS Code or another editor.
+For developers only: run npm install, then npm run build after editing.
+Run npm start to launch. Normal users do not need these commands.
+
+OTHER COMPUTERS
+On macOS or Linux with Node.js 22+, open a terminal in this folder and run:
+node server.cjs --open
+
+TROUBLESHOOTING
+- Extract the whole ZIP first; do not run files from inside the ZIP preview.
+- If node is not found, install Node.js and reopen the launcher.
+- If Gemma refuses a request, check your API key, model access and quota.
+- The application listens only on your own computer's loopback address.
+- If a port is occupied, the app selects another port automatically.
+
+Sky positions were calculation-tested; local HTTP routes were tested.
+The Windows launcher has not been executed on Windows in this environment.
+Live Gemma answers require your own key and were not tested with a live key.
+
+Licensing: original application code is MIT. Third-party licenses are in
+licenses/. HYG catalog data remains CC BY-SA 4.0. See README.md.

@@ -1,0 +1,23 @@
+{
+  "name": "night-atlas-pc",
+  "version": "1.1.0",
+  "private": true,
+  "description": "Local stargazing planner with a Gemma guide",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.cjs --open",
+    "build": "node build.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "lucide-react": "1.31.0",
+    "astronomy-engine": "2.1.19"
+  },
+  "devDependencies": {
+    "esbuild": "0.27.3"
+  }
+}
